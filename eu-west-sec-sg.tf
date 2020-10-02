@@ -14,14 +14,6 @@ resource "aws_security_group" "eu-west-sec-sg" {
   }
   #Inbound http from anywhere
   ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  #Inbound http from anywhere
-  ingress {
     from_port   = 8080
     to_port     = 8080
     protocol    = "tcp"
