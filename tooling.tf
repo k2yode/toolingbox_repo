@@ -37,8 +37,7 @@ resource "aws_instance" "instance_x" {
   #instance tags
   tags = {
     Name = "eu-west-ToolingServer-${count.index + 1}"
-    Test = "TRUE_FALSE"
-  }
+      }
 
   #create security group
   vpc_security_group_ids = ["${aws_security_group.eu-west-sec-sg.id}"]
