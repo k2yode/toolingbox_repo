@@ -20,7 +20,7 @@ resource "aws_instance" "instance_x" {
 
   #instance tags
   tags = {
-    Name = "eu-west-Tooling-Server-${count.index + 1}"
+    Name = "eu-west-ToolingServer-${count.index + 1}"
     Test = "TRUE_FALSE"
   }
 
