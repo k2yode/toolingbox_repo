@@ -22,6 +22,7 @@ terraform {
 ################################
 #EC-2 Instances Setup
 ################################
+
 resource "aws_instance" "instance_x" {
 
   #AMI template
