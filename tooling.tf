@@ -21,6 +21,7 @@ resource "aws_instance" "instance_x" {
   #instance tags
   tags = {
     Name = "eu-Tooling-Server-${count.index + 1}"
+    Test = "yes"
   }
 
   #create security group
