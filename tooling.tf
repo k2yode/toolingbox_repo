@@ -1,7 +1,15 @@
+####################
+#AWS Provider settings
+####################
+
 provider "aws" {
   profile = "default"
   region  = "eu-west-2"
 }
+
+################################
+#S3 Bucket to store tfstate file
+################################
 
 terraform {
   backend "s3" {
@@ -11,8 +19,15 @@ terraform {
   }
 }
 
+################################
+#EC-2 Instances Setup
+################################
 resource "aws_instance" "instance_x" {
+
+  #AMI template
   ami   = "ami-0f79f2f1eb693b53b"
+
+  #Total instance to create
   count = 2
 
   #instance type
@@ -27,6 +42,6 @@ resource "aws_instance" "instance_x" {
   #create security group
   vpc_security_group_ids = ["${aws_security_group.eu-west-sec-sg.id}"]
 
-  #passing key
+  #keyname
   key_name = "eu-devopskey"
 }

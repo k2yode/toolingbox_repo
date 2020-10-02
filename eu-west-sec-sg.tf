@@ -1,3 +1,7 @@
+
+################################
+# Security Group
+################################
 resource "aws_security_group" "eu-west-sec-sg" {
   name = "AWSTerraform-SecGroup"
 
@@ -5,7 +9,10 @@ resource "aws_security_group" "eu-west-sec-sg" {
     Name = "EU-West-Firewall"
   }
 
-  #Inbound SSH from anywhere
+################################
+# Inbound SSH from anywhere
+################################
+  
   ingress {
     from_port   = 22
     to_port     = 22
@@ -20,7 +27,9 @@ resource "aws_security_group" "eu-west-sec-sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  #Outbound to anywhere
+  ################################
+  # Outbound SSH from anywhere
+  ################################
   egress {
     from_port   = "0"
     to_port     = "0"
