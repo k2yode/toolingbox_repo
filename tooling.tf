@@ -25,7 +25,7 @@ terraform {
 
 resource "aws_instance" "instance_x" {
 
-  #AMI template
+  #Copy AMI Image
   ami   = "ami-0f79f2f1eb693b53b"
 
   #Total instance to create
